@@ -31,18 +31,19 @@ def main():
             os.close(w)
             pipes.append(r)
 
-    results = []
+    resultados = []
+
     for pipe in pipes:
         r = os.fdopen(pipe)
-        result = r.readline().strip()
-        results.append(result)
+        resultado = r.readline().strip()
+        resultados.append(resultado)
         r.close()
 
     for _ in lineas:
         os.wait()
 
-    for result in results:
-        print(result, end='\n')
+    for resultado in resultados:
+        print(resultado, end='\n')
 
 if __name__ == '__main__':
     main()
