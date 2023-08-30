@@ -1,0 +1,3 @@
+El error "BrokenPipeError: [Errno 32] Broken pipe" ocurre cuando se intenta escribir en un proceso o conexión que ya ha sido cerrada por la otra parte.
+Esto podría deberse a que el proceso receptor se detuvo antes de que se completara la transferencia o porque hubo un problema en la conexión.
+Como por ejemplo, si se intenta escribir en un socket que ya está cerrado.
