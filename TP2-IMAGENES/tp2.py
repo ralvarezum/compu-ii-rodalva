@@ -18,7 +18,7 @@ def convert_to_grayscale(input_file, output_file):
 def http_server(ip, port):
     try:
         httpd = socketserver.TCPServer(("0.0.0.0", port), http.server.SimpleHTTPRequestHandler)
-        print(f"Servidor HTTP en {ip}:{port}")
+        print(f"Servidor HTTP escuchando en {ip}:{port}")
         httpd.serve_forever()
     except Exception as e:
         print(f"Error en el servidor HTTP: {e}")
@@ -30,9 +30,9 @@ def image_processing_worker():
         image_queue.task_done()
 
 def main():
-    parser = argparse.ArgumentParser(description="Tp2 - procesa imágenes")
-    parser.add_argument("-i", "--ip", required=True, help="Dirección de escucha")
-    parser.add_argument("-p", "--port", type=int, required=True, help="Puerto de escucha")
+    parser = argparse.ArgumentParser(description="Tp2 - Procesado de imágenes a gris")
+    parser.add_argument("-i", "--ip", required=True, help="Dirección IP")
+    parser.add_argument("-p", "--port", type=int, required=True, help="Puerto")
     args = parser.parse_args()
 
     ip = args.ip
