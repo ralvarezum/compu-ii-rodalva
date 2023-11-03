@@ -43,7 +43,7 @@ def main():
     http_server_thread.start()
 
     
-    for _ in range(4):
+    for thread in range(4):
         worker_thread = threading.Thread(target=image_processing_worker)
         worker_thread.daemon = True
         worker_thread.start()
@@ -53,6 +53,9 @@ def main():
             input_file = "oasis.jpg"  
             output_file = "oasis-gris.jpg"  
             image_queue.put((input_file, output_file))
+            input_file2 = "oasis.jpg"  
+            output_file2 = "oasis-gris.jpg"  
+            image_queue.put((input_file2, output_file2))
             image_queue.join()
     except Exception as e:
         print(f"Error en el manejo de IPC: {e}")
