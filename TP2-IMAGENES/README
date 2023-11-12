@@ -2,3 +2,4 @@ Cómo funciona?
 Ejemplo: python3 tp2.py -i 0.0.0.0 -p 8080
 La imagen a convertir a gris está hardcodeada en la línea 53.
 Hay que colocar la imagen a convertir en el mismo directorio del archivo ejecutable.
+Se sugiere usar otra imagen para probarlo, no las de Oasis que ya fueron modificadas!
